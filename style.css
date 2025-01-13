@@ -1,69 +1,64 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0;
     padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+    text-align: center;
     color: #333;
 }
 
-form {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 60%;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+h2 {
+    border-bottom: 2px solid #007BFF;
+    color: #007BFF;
+    padding-bottom: 5px;
 }
 
 label {
     display: block;
-    font-weight: bold;
     margin-top: 10px;
+    font-weight: bold;
 }
 
-input {
+input, textarea, button {
     width: 100%;
-    padding: 8px;
-    margin: 5px 0;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #333;
+    background-color: #007BFF;
     color: #fff;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #0056b3;
+}
+
 .resume-template {
-    display: none;
-    width: 60%;
     margin-top: 20px;
     padding: 20px;
-    background-color: #ffffff;
+    background: #fafafa;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
 }
 
-.resume-template h2 {
-    margin-top: 10px;
-    font-size: 18px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
-
-.resume-section {
-    margin-top: 20px;
+.section {
+    margin-bottom: 20px;
 }

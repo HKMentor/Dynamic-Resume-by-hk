@@ -5,68 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Resume Generator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
 </head>
 <body>
-    <h1>Professional Resume Generator</h1>
-    <form id="resumeForm">
-        <h2>Contact Information</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" required>
+    <div class="container">
+        <h1>HOORIA KHAN</h1>
+        <h1>Professional Resume Generator</h1>
         
-        <label for="jobTitle">Job Title:</label>
-        <input type="text" id="jobTitle" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" required>
+        <!-- Resume Form -->
+        <form id="resumeForm">
+            <!-- Contact Information Section -->
+            <section>
+                <h2>Contact Information</h2>
+                   <!-- Profile Picture Input -->
+        <label for="profilePicture">Profile Picture:</label>
+        <input type="file" id="profilePicture" name="profilePicture" accept="image/*"><br><br>
 
-        <label for="address">Address:</label>
-        <input type="text" id="address">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
 
-        <h2>Education</h2>
-        <label for="degree1">Degree:</label>
-        <input type="text" id="degree1" required>
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" required>
 
-        <label for="institution1">Institution:</label>
-        <input type="text" id="institution1" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
 
-        <label for="degree2">Degree:</label>
-        <input type="text" id="degree2">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required>
 
-        <label for="institution2">Institution:</label>
-        <input type="text" id="institution2">
+                <label for="address">Address:</label>
+                <input type="text" id="address">
+            </section>
 
-        <h2>Experience</h2>
-        <label for="company1">Company Name:</label>
-        <input type="text" id="company1">
+            <!-- Education Section -->
+            <section>
+                <h2>Education</h2>
+                <label for="degree1">Degree:</label>
+                <input type="text" id="degree1" required>
 
-        <label for="position1">Position:</label>
-        <input type="text" id="position1">
+                <label for="institution1">Institution:</label>
+                <input type="text" id="institution1" required>
 
-        <label for="company2">Company Name:</label>
-        <input type="text" id="company2">
+                <label for="degree2">Degree:</label>
+                <input type="text" id="degree2">
 
-        <label for="position2">Position:</label>
-        <input type="text" id="position2">
+                <label for="institution2">Institution:</label>
+                <input type="text" id="institution2">
+            </section>
 
-        <h2>Skills</h2>
-        <label for="skill1">Skill:</label>
-        <input type="text" id="skill1">
-        <label for="skill2">Skill:</label>
-        <input type="text" id="skill2">
-        <label for="skill3">Skill:</label>
-        <input type="text" id="skill3">
-        <label for="skill4">Skill:</label>
-        <input type="text" id="skill4">
-        <label for="skill5">Skill:</label>
-        <input type="text" id="skill">
-        
-        <button type="button" onclick="generateResume()">Generate Resume</button>
-    </form>
+            <!-- Work Experience Section -->
+            <section>
+                <h2>Experience</h2>
+                <label for="company1">Company Name:</label>
+                <input type="text" id="company1">
 
-    <div id="resumeOutput" class="resume-template"></div>
+                <label for="position1">Position:</label>
+                <input type="text" id="position1">
+
+                <label for="company2">Company Name:</label>
+                <input type="text" id="company2">
+
+                <label for="position2">Position:</label>
+                <input type="text" id="position2">
+            </section>
+
+            <!-- Skills Section -->
+            <section>
+                <h2>Skills</h2>
+                <input type="text" id="skill1" placeholder="Skill 1">
+                <input type="text" id="skill2" placeholder="Skill 2">
+                <input type="text" id="skill3" placeholder="Skill 3">
+                <input type="text" id="skill4" placeholder="Skill 4">
+            </section>
+
+            <!-- Projects Section -->
+            <section>
+                <h2>Projects</h2>
+                <label for="project1">Project Title:</label>
+                <input type="text" id="project1">
+
+                <label for="projectDescription1">Project Description:</label>
+                <textarea id="projectDescription1"></textarea>
+            </section>
+
+            <!-- References Section -->
+            <section>
+                <h2>References</h2>
+                <label for="reference1">Reference Name:</label>
+                <input type="text" id="reference1">
+
+                <label for="referencePhone1">Phone:</label>
+                <input type="tel" id="referencePhone1">
+            </section>
+
+            <!-- Buttons for generating and downloading PDF -->
+            <div class="buttons">
+                <button type="button" id="generateResumeBtn" onclick="generateResume()">Generate Resume</button>
+                <button type="button" id="downloadPDFBtn" onclick="downloadPDF()">Download PDF</button>
+            </div>
+        </form>
+
+        <!-- Generated Resume Output -->
+        <div id="resumeOutput" class="resume-template"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
